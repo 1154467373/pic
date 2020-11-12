@@ -1,0 +1,14 @@
+version: '3'
+services:
+  uniapp-h5:
+    image: nginx:latest
+    container_name: uniapp-h5
+    hostname: uniapp-h5
+    ports:
+      - "8882:8882"
+    volumes:
+      - ./dist/build/h5:/usr/share/nginx/html/uniapp-h5/  #创建项目根目录
+      - ./uniapp-h5.conf:/etc/nginx/conf.d/uniapp-h5.conf
+    restart: always
+ 
+
